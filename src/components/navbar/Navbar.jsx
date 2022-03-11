@@ -7,7 +7,10 @@ function Navbar() {
 
   return (
     <nav>
-      <img className="navbarImg" src={logoImg} alt="pokeApi"></img>
+      <div>
+        <img className="navbarImg" src={logoImg} alt="pokeApi"></img>
+      </div>
+      <div>❤️</div>
     </nav>
   );
 }
