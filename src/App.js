@@ -1,10 +1,15 @@
-import logo from "./logo.svg";
+import Navbar from "./components/navbar/Navbar";
+import SearchBar from "./components/searchbar/SearchBar";
+import { searchPokemon } from "./api/api";
 import "./App.css";
 
 function App() {
+  const onSearchHandler = (pokemon) => {};
   return (
-    <div className="App">
-      <h1>Hellow word</h1>
+    <div>
+      <Navbar />
+      <SearchBar onSearch={onSearchHandler} />
+      <div className="App"></div>
     </div>
   );
 }
