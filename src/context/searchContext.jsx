@@ -50,7 +50,7 @@ export function SearchContextProvider({ children }) {
 
   useEffect(() => {
     fetchPokemons();
-  }, [page]);
+  }, [page, search]);
 
   const onChangeHandler = (e) => {
     setSearch(e.target.value);
