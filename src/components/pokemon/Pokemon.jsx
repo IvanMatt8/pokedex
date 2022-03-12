@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import FavoriteContext from "../../context/favoritesContext";
+import Icon, { IconName } from "../icon/Icon";
 import "./Pokemon.css";
 
 function Pokemon({ pokemon }) {
@@ -9,21 +10,25 @@ function Pokemon({ pokemon }) {
     updateFavoritePokemons(pokemon.name);
   };
 
-  const heart = favoritePokemons.includes(pokemon.name) ? "❤️" : "🖤";
+  const heart = favoritePokemons.includes(pokemon.name)
+    ? IconName.heartLike
+    : IconName.heartUnLike;
 
   return (
     <div className="pokemonCard">
-      <div className="pokemonImageContent">
-        <img
-          className="pokemonImage"
-          alt={pokemon.name}
-          src={pokemon.sprites.front_default}
-        />
-      </div>
       <div className="cardBody">
+        <div className="idPokemon">
+          <h3>N° {pokemon.id}</h3>
+        </div>
         <div className="cardTop">
+          <div className="pokemonImageContent">
+            <img
+              className="pokemonImage"
+              alt={pokemon.name}
+              src={pokemon.sprites.front_default}
+            />
+          </div>
           <h3>{pokemon.name}</h3>
-          <h3>#{pokemon.id}</h3>
         </div>
         <div className="cardBottom">
           <div className="pokemonType">
@@ -33,9 +38,11 @@ function Pokemon({ pokemon }) {
               </div>
             ))}
           </div>
-          <button className="pokemonHeaderBtn" onClick={onHeartCLick}>
-            {heart}
-          </button>
+          <Icon
+            onClick={onHeartCLick}
+            iconName={heart}
+            className="pokemonHeaderBtn"
+          />
         </div>
       </div>
     </div>
