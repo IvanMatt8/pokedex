@@ -1,16 +1,19 @@
 import React from "react";
+import { useSearch } from "../../context/searchContext";
 import "./Pagination.css";
 
-function Pagination({ page, totalPages, onLeftClick, onRightClick }) {
+function Pagination() {
+  const { page, totalPages, onLeftClickHandler, onRightClickHandler } =
+    useSearch();
   return (
     <div className="paginationContent">
-      <button onClick={onLeftClick}>
+      <button onClick={onLeftClickHandler}>
         <div>◀</div>
       </button>
       <div>
         {page} de {totalPages}
       </div>
-      <button onClick={onRightClick}>
+      <button onClick={onRightClickHandler}>
         <div>▶</div>
       </button>
     </div>
