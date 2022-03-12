@@ -1,31 +1,46 @@
 .pokemonCard {
   display: flex;
-  box-shadow: 4px 4px 4px  rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0px 1px 3px -1px #000;
+  border-radius: 10px;
+  position: relative;
 }
 
 .pokemonImageContent {
   padding: 0px 10px;
 }
 
-.pokemonImage {
+.idPokemon {
   width: 70px;
-  height: 70px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: #ABAAAA;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.pokemonImage {
+  width: 150px;
+  height: 150px;
   margin-right: 10px;
 }
 
 .cardBody {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: 10px 10px 10px 0px;
   flex: 1;
 }
 
 .cardTop {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -50,10 +65,7 @@
 }
 
 .pokemonHeaderBtn{
-  border: none;
-  background-color: white;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
-  padding: 4px;
-  cursor: pointer;
-  align-items: center;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 }
