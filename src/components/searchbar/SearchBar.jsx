@@ -8,8 +8,6 @@ const SearchBar = () => {
     <div className="sarchBarContainer">
       <div className="sarchBar">
         <input placeholder="Buscar Pokemon" onChange={onChangeHandler} />
-      </div>
-      <div className="searchBarButton">
         <button onClick={onButtonClickHandler}>Buscar</button>
       </div>
     </div>
