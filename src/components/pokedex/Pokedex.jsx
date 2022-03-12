@@ -1,11 +1,12 @@
 import React from "react";
 import { useSearch } from "../../context/searchContext";
+import Loarder from "../loader/Loader";
 import Pagination from "../pagination/Pagination";
 import Pokemon from "../pokemon/Pokemon";
 import "./Pokedex.css";
 
 function Pokedex() {
-  const { pokemons, loading, page, totalPages, setPage } = useSearch();
+  const { pokemons, loading } = useSearch();
 
   return (
     <div className="pokedexContent">
@@ -13,8 +14,9 @@ function Pokedex() {
         <h1>Pokedex</h1>
         <Pagination />
       </div>
+
       {loading ? (
-        <div>Carregando, um minuto...</div>
+        <Loarder className="loader" />
       ) : (
         <div className="pokedexGrid">
           {pokemons &&
