@@ -1,20 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSearch } from "../../context/searchContext";
 import "./SearchBar.css";
 
-const SearchBar = (props) => {
-  const [search, setSearch] = useState("dito");
-  const { onSearch } = props;
-  const onChangeHandler = (e) => {
-    setSearch(e.target.value);
-    if (e.target.value.lenght === 0) {
-      onSearch(undefined);
-    }
-  };
-
-  const onButtonClickHandler = () => {
-    onSearch(search);
-  };
-
+const SearchBar = () => {
+  const { onChangeHandler, onButtonClickHandler } = useSearch();
   return (
     <div className="sarchBarContainer">
       <div className="sarchBar">
