@@ -5,6 +5,7 @@ import "./App.css";
 import Pokedex from "./components/pokedex/Pokedex";
 import { FavoriteProvider } from "./context/favoritesContext";
 import { useSearch } from "./context/searchContext";
+import Footer from "./components/footer/Footer";
 
 const favoritesKey = "f";
 
@@ -50,6 +51,7 @@ function App() {
           <Pokedex />
         )}
       </div>
+      <Footer />
     </FavoriteProvider>
   );
 }
